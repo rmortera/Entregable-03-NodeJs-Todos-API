@@ -52,6 +52,17 @@ class TodosServices {
       throw error;
     }
   }
+
+  static async delete(id) {
+    try {
+      const result = Todos.destroy({
+        where: { id },
+      });
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 module.exports = TodosServices;
