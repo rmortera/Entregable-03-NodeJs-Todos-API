@@ -21,6 +21,7 @@ const Todos = db.define(
     status: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: "false",
     },
     userId: {
       type: DataTypes.INTEGER,

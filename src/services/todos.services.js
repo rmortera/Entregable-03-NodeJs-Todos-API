@@ -41,6 +41,17 @@ class TodosServices {
       throw error;
     }
   }
+
+  static async update(newStatus, id) {
+    try {
+      const result = await Todos.update(newStatus, {
+        where: { id },
+      });
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 module.exports = TodosServices;

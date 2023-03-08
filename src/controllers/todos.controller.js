@@ -19,7 +19,19 @@ const createTodo = async (req, res) => {
   }
 };
 
+const updateTodo = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const newStatus = req.body;
+    await TodosServices.update(newStatus, id);
+    res.status(204).send();
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
+
 module.exports = {
   getAllTodos,
   createTodo,
+  updateTodo,
 };
