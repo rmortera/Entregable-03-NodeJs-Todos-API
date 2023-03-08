@@ -3,6 +3,15 @@ const Todos = require("../models/todos.model");
 const Users = require("../models/users.model");
 
 class TodosServices {
+  static async create(newTodo) {
+    try {
+      const result = await Todos.create(newTodo);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   static async getAll() {
     try {
       const result = await Todos.findAll({
