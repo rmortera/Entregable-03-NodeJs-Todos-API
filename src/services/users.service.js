@@ -1,3 +1,4 @@
+const Categories = require("../models/categories.model");
 const Todos = require("../models/todos.model");
 const Users = require("../models/users.model");
 
@@ -36,6 +37,10 @@ class UserServices {
           {
             model: Todos,
             attributes: ["title", "status"],
+            include: {
+              model: Categories,
+              attributes: ["name"],
+            },
           },
         ],
       });
